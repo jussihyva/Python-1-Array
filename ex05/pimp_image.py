@@ -2,49 +2,50 @@ import numpy as np
 from PIL import Image
 
 def invert_pixcel(pixcel:list) -> list:
-    inverted_pixcel:list = np.array(list(map(lambda x: np.uint8(255) - x, pixcel)))
-    return inverted_pixcel
-
-def invert_row(row:list) -> list:
-    inverted_row:np.ndarray = np.array(list(map(invert_pixcel, row)))
-    return inverted_row
+    new_pixcel:list = np.array(list(map(lambda x: np.uint8(255) - x, pixcel)))
+    return new_pixcel
 
 
 def red_pixcel(pixcel:np.ndarray) -> np.ndarray:
-    red_color_pixcel:np.ndarray = np.array([
+    new_pixcel:np.ndarray = np.array([
         pixcel[0],
         np.uint8(0),
         np.uint8(0)
     ])
-    return red_color_pixcel
+    return new_pixcel
 
 
 def green_pixcel(pixcel:np.ndarray) -> np.ndarray:
-    red_color_pixcel:np.ndarray = np.array([
+    new_pixcel:np.ndarray = np.array([
         np.uint8(0),
         pixcel[1],
         np.uint8(0)
     ])
-    return red_color_pixcel
+    return new_pixcel
 
 
 def blue_pixcel(pixcel:np.ndarray) -> np.ndarray:
-    red_color_pixcel:np.ndarray = np.array([
+    new_pixcel:np.ndarray = np.array([
         np.uint8(0),
         np.uint8(0),
         pixcel[2]
     ])
-    return red_color_pixcel
+    return new_pixcel
 
 
 def grey_pixcel(pixcel:np.ndarray) -> np.ndarray:
     value = np.mean(pixcel)
-    red_color_pixcel:np.ndarray = np.array([
+    new_pixcel:np.ndarray = np.array([
         np.uint8(value),
         np.uint8(value),
         np.uint8(value)
     ])
-    return red_color_pixcel
+    return new_pixcel
+
+
+def invert_row(row:list) -> list:
+    new_row:np.ndarray = np.array(list(map(invert_pixcel, row)))
+    return new_row
 
 
 def red_row(row:np.ndarray) -> np.ndarray:
