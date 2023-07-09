@@ -22,3 +22,5 @@ for input in input_list:
             is_valid_result = False
     test_case_result:bool = input['is_valid_input'] == is_valid_result
     print('Test case id: {}. Test result: {}'.format(str(test_case_id), str(test_case_result)))
+print(give_bmi.__doc__)
+print(apply_limit.__doc__)

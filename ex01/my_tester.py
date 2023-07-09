@@ -24,3 +24,4 @@ for family_data in family_data_list:
         is_valid_result = False
     test_case_result:bool = family_data['is_valid_input'] == is_valid_result
     print('Test case id: {}. Test result: {}'.format(str(test_case_id), str(test_case_result)))
+print(slice_me.__doc__)

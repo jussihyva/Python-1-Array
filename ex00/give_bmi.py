@@ -16,6 +16,10 @@ def are_input_values_valid(height: list[Union[int, float]], weight: list[Union[i
 
 def give_bmi(height: list[Union[int, float]], weight: list[Union[int, float]]) -> list[Union[int, float]]:
 # def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+    '''
+    A function, give_bmi, take 2 lists of integers or floats in input and returns a list
+of BMI values
+    '''
     bmi_list = list()
     if not are_input_values_valid(height, weight):
         pass
@@ -28,5 +32,9 @@ def give_bmi(height: list[Union[int, float]], weight: list[Union[int, float]]) -
 
 def apply_limit(bmi: list[Union[int, float]], limit: int) -> list[bool]:
 # def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
+    '''
+    A function, apply_limit, accepts a list of integers or floats and an integer representing
+a limit as parameters. It returns a list of booleans (True if above the limit).
+    '''
     limit_list = list(map(lambda x: x > limit, bmi))
     return limit_list
