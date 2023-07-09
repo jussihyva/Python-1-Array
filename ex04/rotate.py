@@ -14,8 +14,9 @@ def rotate_90_and_flip(array: np.array) -> np.ndarray:
     if len(array) > 0:
         row:list = list(array[0])
         rotated_image_array:np.ndarray = np.array(row)
-        for row in array[1:]:
-            rotated_image_array:np.ndarray = np.c_[rotated_image_array, row]
+        if len(array) > 1:
+            for row in array[1:]:
+                rotated_image_array:np.ndarray = np.c_[rotated_image_array, row]
     else:
         rotated_image_array:np.ndarray = np.array([])
     return rotated_image_array
